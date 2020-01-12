@@ -118,6 +118,7 @@ Both ways work. You can define the configuration inline in source code or as env
 
 ```javascript
 import app from 'firebase/app';
+
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -126,11 +127,13 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
   }
 }
+
 export default Firebase;
 ```
 
@@ -138,6 +141,7 @@ That's all that is needed for a firebase configuration in your application. Opti
 
 ```javascript
 import app from 'firebase/app';
+
 const prodConfig = {
   apiKey: process.env.REACT_APP_PROD_API_KEY,
   authDomain: process.env.REACT_APP_PROD_AUTH_DOMAIN,
@@ -146,6 +150,7 @@ const prodConfig = {
   storageBucket: process.env.REACT_APP_PROD_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_PROD_MESSAGING_SENDER_ID,
 };
+
 const devConfig = {
   apiKey: process.env.REACT_APP_DEV_API_KEY,
   authDomain: process.env.REACT_APP_DEV_AUTH_DOMAIN,
@@ -154,6 +159,7 @@ const devConfig = {
   storageBucket: process.env.REACT_APP_DEV_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_DEV_MESSAGING_SENDER_ID,
 };
+
 const config =
   process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
 class Firebase {
@@ -161,6 +167,7 @@ class Firebase {
     app.initializeApp(config);
   }
 }
+
 export default Firebase;
 ```
 
@@ -168,6 +175,7 @@ An alternate way to implement this is to specify a dedicated `.env.development` 
 
 ```javascript
 import app from 'firebase/app';
+
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -176,11 +184,13 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
   }
 }
+
 export default Firebase;
 ```
 
